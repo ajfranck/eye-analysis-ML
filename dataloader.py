@@ -8,7 +8,7 @@ class ImageDataset:
     def __len__(self):
         return self.X.shape[0]
     def __getitem__(self, index):
-        return self.X[index, :, :, :], self.y[index]
+        return self.X[index, :, :, :], self.y[index, :]
     
 
 # Open training data
@@ -47,8 +47,11 @@ dataset_validation = ImageDataset(X_valid, y_valid)
 dataset_train = ImageDataset(X_train, y_train)
 dataset_test = ImageDataset(X_test, np.zeros(len(X_test)))
 
-print("Train size: ", len(dataset_train))
-print("Validation size: ", len(dataset_validation))
+# print("Train size: ", len(dataset_train))
+# print("Validation size: ", len(dataset_validation))
+
+#get random sample from dataset
+X, y = dataset_train[0]
 
 #create dataloaders
 BATCH_SIZE = 8

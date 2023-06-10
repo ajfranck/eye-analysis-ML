@@ -16,7 +16,7 @@ model.forward(X)                       # apply forward pass
 model.apply(init_weights)              # apply initialization
 
 loss_fn = nn.MSELoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=0.1)
+optimizer = torch.optim.Adam(model.parameters(), lr=0.1)
 
 
 plt.figure(figsize=(8,6))

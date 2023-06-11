@@ -5,10 +5,10 @@ from imports import *
 
 # define training hyperparameters
 INIT_LR = 1e-5
-EPOCHS = 50
+EPOCHS = 20
 
 
-model = NiN(lr=INIT_LR).to(device)
+model = AlexNet(lr=INIT_LR).to(device)
 
 # initialize weights, requires forward pass for Lazy layers
 X = next(iter(train_dataloader))[0].to(device)    # get a batch from dataloader

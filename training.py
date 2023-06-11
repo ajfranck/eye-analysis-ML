@@ -7,6 +7,13 @@ from imports import *
 INIT_LR = 1e-5
 EPOCHS = 20
 
+import gc
+def report_gpu():
+   print(torch.cuda.list_gpu_processes())
+   gc.collect()
+   torch.cuda.empty_cache()
+
+# report_gpu()
 
 model = AlexNet(lr=INIT_LR).to(device)
 

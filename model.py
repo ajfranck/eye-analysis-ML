@@ -45,23 +45,41 @@ class NiN(nn.Module):
         return self.net(x)
 
 
-class AlexNet(nn.Module):
+#! muti class output regression network
 
-    def __init__(self, lr=0.01, num_classes=2):
-        super().__init__()
-        self.net = nn.Sequential(
-            nn.LazyConv2d(96, kernel_size=11, stride=4, padding=1),
-            nn.ReLU(), nn.MaxPool2d(kernel_size=3, stride=2),
-            nn.LazyConv2d(256, kernel_size=5, padding=2), nn.ReLU(),
-            nn.MaxPool2d(kernel_size=3, stride=2),
-            nn.LazyConv2d(384, kernel_size=3, padding=1), nn.ReLU(),
-            nn.LazyConv2d(384, kernel_size=3, padding=1), nn.ReLU(),
-            nn.LazyConv2d(256, kernel_size=3, padding=1), nn.ReLU(),
-            nn.MaxPool2d(kernel_size=3, stride=2), nn.Flatten(),
-            nn.LazyLinear(4096), nn.ReLU(), nn.Dropout(p=0.5),
-            nn.LazyLinear(4096), nn.ReLU(),nn.Dropout(p=0.5),
-            nn.LazyLinear(num_classes)
+class MultiNet(nn.Module):
+    def __init__(self):
+        super(EyeDiameterNet, self).__init__()
+
+        # Shared layers
+        self.shared_conv_layers = nn.Sequential(
+            nn.Conv2d(4, 32, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=2, stride=2),
+            nn.Conv2d(32, 64, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=2, stride=2),
+            nn.Conv2d(64, 128, kernel_size=3, stride=1, padding=1),
+            nn.ReLU(inplace=True),
+            nn.MaxPool2d(kernel_size=2, stride=2),
         )
-        
+
+        # Separate branches for vertical and horizontal diameters
+        self.vertical_branch = nn.Sequential(
+            nn.Linear(128 * 125 * 125, 256),
+            nn.ReLU(inplace=True),
+            nn.Linear(256, 1)
+        )
+
+        self.horizontal_branch = nn.Sequential(
+            nn.Linear(128 * 125 * 125, 256),
+            nn.ReLU(inplace=True),
+            nn.Linear(256, 1)
+        )
+
     def forward(self, x):
-        return self.net(x)
+        x = self.shared_conv_layers(x)
+        x = x.view(x.size(0), -1)  # Flatten the feature maps
+        vertical_diameter = self.vertical_branch(x)
+        horizontal_diameter = self.horizontal_branch(x)
+        return vertical_diameter, horizontal_diameter

@@ -10,6 +10,9 @@ class ImageDataset:
     def __getitem__(self, index):
         return self.X[index, :, :, :], self.y[index, :]
     
+transform1 = transforms.Compose([
+    transforms.Resize((224,224))
+])
 
 # Open training data
 file = h5py.File("data/US_train.h5", "r+")

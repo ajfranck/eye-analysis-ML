@@ -41,12 +41,19 @@ def test_loop(dataloader, model, loss_fn):
             y = y.to(device)
             pred = model(X)
             test_loss += loss_fn(pred, y).item()
-            pred_vert = pred.argmax(1)
-            pred_horiz = pred.argmax(0)
-            y_vert = y.argmax(1)
-            y_horiz = y.argmax(0)
-            correct += (pred_horiz == y_horiz).type(torch.float).sum().item()
-            correct2 += (pred_vert == y_vert).type(torch.float).sum().item()
+            pred_vert = pred[:,0]
+            pred_horiz = pred[:,1]
+            y_vert = y[:,0]
+            y_horiz = y[:,1]
+            print('predicted vertical', pred_vert)
+            print('actual vertical', y_vert)
+            for i in range(pred.shape[0]):
+                if(pred_horiz[i] - y_horiz[i] < 0.1 and pred_horiz[i] - y_horiz[i] > -0.1):
+                    correct += 1
+                if(pred_vert[i] - y_vert[i] < 0.1 and pred_vert[i] - y_vert[i] > -0.1):
+                    correct2 += 1
+            # correct += (pred_horiz == y_horiz).type(torch.float).sum().item()
+            # correct2 += (pred_vert == y_vert).type(torch.float).sum().item()
             # correct = 0
 
     test_loss /= num_batches

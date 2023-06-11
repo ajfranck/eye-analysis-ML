@@ -5,7 +5,7 @@ from imports import *
 
 # define training hyperparameters
 INIT_LR = 1e-5
-EPOCHS = 10
+EPOCHS = 50
 
 
 model = NiN(lr=INIT_LR).to(device)
@@ -43,7 +43,7 @@ for t in range(EPOCHS):
     display.display(plt.gcf())
     time.sleep(0.0001)
     
-print(f"Final Accuracy: {(test_acc_horizontal):>0.1f}%")
+print(f"Final Accuracy Horizontal: {(test_acc_horizontal):>0.1f}%")
 print(f"Final Accuracy Vertical: {(test_acc_vertical):>0.1f}%")
 plt.savefig('accuracy_graph.png')
 

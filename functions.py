@@ -5,8 +5,8 @@ import cv2
 theta_deg = 60
 transform1 = transforms.Compose([
     # transforms.Resize((224,224))
-    # transforms.RandomRotation(theta_deg,interpolation=transforms.InterpolationMode.NEAREST),
-    # transforms.RandomHorizontalFlip(0.5),
+    transforms.RandomRotation(theta_deg,interpolation=transforms.InterpolationMode.NEAREST),
+    transforms.RandomHorizontalFlip(0.5),
 ])
 
 def train_loop(dataloader, model, loss_fn, optimizer):
@@ -16,10 +16,12 @@ def train_loop(dataloader, model, loss_fn, optimizer):
         X = transform1(X.to(device))
         y = y.to(device)
         y = y.type(torch.float)
-        # Compute prediction and loss
         pred = model(X)
-        loss = loss_fn(pred, y).to(torch.float64)
-        # Backpropagation
+        # print(pred.shape)
+        # print('predicted', pred)
+        loss1 = loss_fn(pred[:,0], y[:,0]).to(torch.float64)
+        loss2 = loss_fn(pred[:,1], y[:,1]).to(torch.float64)
+        loss = loss1 + loss2
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
@@ -41,13 +43,25 @@ def test_loop(dataloader, model, loss_fn):
             X = X.to(device)
             y = y.to(device)
             pred = model(X)
+            # print(pred.shape)
+            # print('predicted', pred)
             test_loss += loss_fn(pred, y).item()
+            print(test_loss)
             pred_vert = pred[:,0]
             pred_horiz = pred[:,1]
             y_vert = y[:,0]
             y_horiz = y[:,1]
-            print('predicted vertical', pred_vert)
-            print('actual vertical', y_vert)
+            # print('predicted vertical', pred_vert)
+            # print('actual vertical', y_vert)
+            # print('predicted horizontal', pred_horiz)
+            # print('actual horizontal', y_horiz)
+
+            #calculate average distance from actual
+            horizontal_error = torch.abs(pred_horiz - y_horiz)
+            vertical_error = torch.abs(pred_vert - y_vert)
+            # print('horizontal error', horizontal_error)
+            # print('vertical error', vertical_error)
+
             for i in range(pred.shape[0]):
                 if(pred_horiz[i] - y_horiz[i] < 0.1 and pred_horiz[i] - y_horiz[i] > -0.1):
                     correct += 1

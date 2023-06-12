@@ -7,22 +7,15 @@ from imports import *
 INIT_LR = 1e-5
 EPOCHS = 20
 
-import gc
-def report_gpu():
-   print(torch.cuda.list_gpu_processes())
-   gc.collect()
-   torch.cuda.empty_cache()
 
-# report_gpu()
-
-model = AlexNet(lr=INIT_LR).to(device)
+model = NiN(lr=INIT_LR).to(device)
 
 # initialize weights, requires forward pass for Lazy layers
 X = next(iter(train_dataloader))[0].to(device)    # get a batch from dataloader
 model.forward(X)                       # apply forward pass
 model.apply(init_weights)              # apply initialization
 
-loss_fn = nn.MSELoss()
+loss_fn = nn.L1Loss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.1)
 
 

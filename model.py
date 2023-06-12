@@ -47,7 +47,7 @@ class NiN(nn.Module):
 
 #! muti class output regression network
 
-class MultiNet(nn.Module):
+class EyeDiameterNet(nn.Module):
     def __init__(self):
         super(EyeDiameterNet, self).__init__()
 
@@ -64,22 +64,15 @@ class MultiNet(nn.Module):
             nn.MaxPool2d(kernel_size=2, stride=2),
         )
 
-        # Separate branches for vertical and horizontal diameters
-        self.vertical_branch = nn.Sequential(
+        # Fully connected layers
+        self.fc_layers = nn.Sequential(
             nn.Linear(128 * 125 * 125, 256),
             nn.ReLU(inplace=True),
-            nn.Linear(256, 1)
-        )
-
-        self.horizontal_branch = nn.Sequential(
-            nn.Linear(128 * 125 * 125, 256),
-            nn.ReLU(inplace=True),
-            nn.Linear(256, 1)
+            nn.Linear(256, 2)  # Two outputs: vertical and horizontal diameters
         )
 
     def forward(self, x):
         x = self.shared_conv_layers(x)
         x = x.view(x.size(0), -1)  # Flatten the feature maps
-        vertical_diameter = self.vertical_branch(x)
-        horizontal_diameter = self.horizontal_branch(x)
-        return vertical_diameter, horizontal_diameter
+        diameters = self.fc_layers(x)
+        return diameters

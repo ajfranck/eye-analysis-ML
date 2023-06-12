@@ -10,8 +10,8 @@ class ImageDataset:
     def __getitem__(self, index):
         return self.X[index, :, :, :], self.y[index, :]
     
-transform1 = transforms.Compose([
-    transforms.Resize((224,224))
+transform = transforms.Compose([
+    transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5))
 ])
 
 # Open training data
@@ -39,11 +39,17 @@ y_valid = y_train[valid_idx]
 X_train = X_train[train_idx, :, :]
 y_train = y_train[train_idx]
 
+#normalize using transform
+# X_train = transform(X_train)
+# X_valid = transform(X_valid)
+# X_test = transform(X_test)
+
 #Convert all to tensors
 X_train = torch.tensor(X_train).float()
 y_train = torch.tensor(y_train).float()
 X_valid = torch.tensor(X_valid).float()
 y_valid = torch.tensor(y_valid).float()
+
 
 
 dataset_validation = ImageDataset(X_valid, y_valid)

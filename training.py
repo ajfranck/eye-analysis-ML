@@ -48,5 +48,5 @@ print(f"Final Accuracy Vertical: {(test_acc_vertical):>0.1f}%")
 plt.savefig('accuracy_graph.png')
 
 save_path = 'MODEL/model.pth'
-torch.save(model.state_dict(), save_path)
+torch.save(model, save_path)
 

@@ -106,10 +106,22 @@
 
 \section*{Problem Description}
 
-
+The objective of this project is to train a multi-output convolutional neural network capable of accurate calculating both the horizontal and vertical diameter of an eyeball in an ultrasound image. After predicting, the model will be studied using guided backpropogation to determine what the trained model is used to make its predictions.
+\indent
+The model will be trained on 100 ultrasound images of eyeballs, each with a manually labeled horizontal and vertical diameter.
+\indent
+Because of the nature of the image, the model may be able to make fairly accurate predictions even with the limited data size. This report aims to maximise the performance of the model by utilizing shared layers that branch off later into the model. This will allow the model to learn more general features of the image, and then use those features to make more accurate predictions.
+\indent
+Although basic in scope, the goal of this project is to make steps towards a more advanced method of pathology detection in ultrasound images. Ideally, this project would be the start of a larger project that would be able to determine more complex pathologies from ultrasound images, such as other tissues that are not visible through other methods of analysis. 
 
 \section*{Exploratory Data Analysis}
 
+Because of the nature of the data, it was not necessary to perform much data analysis. It was easy to load directly from the files, and straightforward to work with through both the PyTorch and Numpy libraries. To begin, the ultrasound images were noted to have considerable area that was not useful for training. To fix this, the ultrasound images were cropped by 20\% to reduce unnecessary data. Because all of the eyeballs were taken in the center of the screen, and was considerable black space on the surrounding area, it was simple to crop the images without losing any useful data:\\
+
+\begin{center}
+    \includegraphics[width=0.3\textwidth]{images/uncropped.png}
+    \includegraphics[width=0.3\textwidth]{images/cropped.png}
+\end{center}
 
 \section*{Challenges}
 

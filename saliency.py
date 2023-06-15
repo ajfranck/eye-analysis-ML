@@ -24,7 +24,6 @@ model.eval()
 #test if model is correct by predicting
 image = GLOBAL_IMAGE.to(device)
 image.requires_grad_()
-print(image.shape)
 scores = model(image)
 
 labels = y_train
@@ -47,7 +46,7 @@ fig, ax = plt.subplots()
 ax.imshow(np.moveaxis(saved_img, 0, -1) / saved_img.max(), cmap='hot')
 ax.imshow(torch.Tensor.cpu(saliency[0]), alpha=0.9, cmap='hot')
 ax.axis('off')
-ax.set_title('Saliency map, incorrect prediction, Class 3')
+ax.set_title('Saliency map, <5% prediction')
 # plt.axis('off')
 # plt.suptitle('Saliency map, incorrect prediction')
 # plt.savefig('saliency.png')
@@ -57,3 +56,4 @@ ax.set_title('Saliency map, incorrect prediction, Class 3')
 # plt.axis('off')
 # #title for both
 plt.show()
+plt.savefig('saliency.png')

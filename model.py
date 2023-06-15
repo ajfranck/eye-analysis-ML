@@ -40,23 +40,39 @@ class NiN(nn.Module):
             nn.MaxPool2d(3, stride=2)
             )
 
-        
         self.split = nn.Sequential(
-            # nin_block(384, kernel_size=3, strides=1, padding=1),
-            # nn.ReLU(),
-            # nn.Dropout(0.2),
-            # nn.MaxPool2d(3, stride=2),
             nin_block(num_classes, kernel_size=3, strides=1, padding=1),
             nn.ReLU(),
             nn.Dropout(0.2),
             nn.AdaptiveAvgPool2d((1, 1)),
             nn.Flatten())
+        
+        self.net = nn.Sequential(
+            nin_block(96, kernel_size=5, strides=3, padding=0),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            nn.MaxPool2d(3, stride=2),
+            nin_block(256, kernel_size=3, strides=1, padding=2),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            nn.MaxPool2d(3, stride=2),
+            nin_block(384, kernel_size=3, strides=1, padding=1),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            nn.MaxPool2d(3, stride=2),
+            nin_block(2, kernel_size=3, strides=1, padding=1),
+            nn.ReLU(),
+            nn.Dropout(0.2),
+            nn.AdaptiveAvgPool2d((1, 1)),
+            nn.Flatten()
+        )
 
     def forward(self, x):
-        x = self.shared(x)
-        horizontal = self.split(x)
-        vertical = self.split(x)
-        return torch.cat((horizontal, vertical), dim=1)
+        return self.net(x)
+        # x = self.shared(x)
+        # horizontal = self.split(x)
+        # vertical = self.split(x)
+        # return torch.cat((horizontal, vertical), dim=1)
 
 
 #! muti class output regression network

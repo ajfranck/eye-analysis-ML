@@ -79,3 +79,17 @@ test_dataloader = torch.utils.data.DataLoader(
     dataset = dataset_test,
     batch_size = 1,
     shuffle = True)
+
+# file = h5py.File("data/US_train.h5", "r+")
+# y_train = np.array(file["/meta"])
+# file.close()
+# #display distribution of labels with wide box
+# plt.subplot(1, 2, 1)
+# plt.boxplot(y_train[:, 0])
+# plt.title("Horizontal Label Distribution")
+
+# plt.subplot(1, 2, 2)
+# plt.boxplot(y_train[:, 1])
+# plt.title("Vertical Label Distribution")
+# plt.show()
+# plt.savefig("label_distribution.pdf")

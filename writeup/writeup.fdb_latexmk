@@ -1,15 +1,22 @@
 # Fdb version 4
-["bibtex writeup"] 1686703851 "writeup.aux" "writeup.bbl" "writeup" 1686703854 0
+["bibtex writeup"] 1686729232 "writeup.aux" "writeup.bbl" "writeup" 1686729235 0
   "./bibliography.bib" 1685942679 970 11b2358f92f005a9ebe45f8302d96784 ""
   "c:/texlive/2022/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1672790412 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "writeup.aux" 1686703853 597 ead39d02d779e5fc0f350750757052d9 "pdflatex"
+  "writeup.aux" 1686729234 767 56ecaa7ea4c88a6bd10eb559e0e4cdc8 "pdflatex"
   (generated)
   "writeup.bbl"
   "writeup.blg"
   (rewritten before read)
-["pdflatex"] 1686703852 "c:/Users/1amaj/OneDrive/Desktop/Github/eye-analysis-ML/writeup/writeup.tex" "writeup.pdf" "writeup" 1686703854 0
-  "c:/Users/1amaj/OneDrive/Desktop/Github/eye-analysis-ML/writeup/writeup.tex" 1686703849 5442 8064ebcac05ded4059ba1975313a54c3 ""
+["pdflatex"] 1686729232 "c:/Users/1amaj/OneDrive/Desktop/Github/eye-analysis-ML/writeup/writeup.tex" "writeup.pdf" "writeup" 1686729235 0
+  "c:/Users/1amaj/OneDrive/Desktop/Github/eye-analysis-ML/writeup/writeup.tex" 1686729226 11021 6ad9a1a83967ab3f2ed000eb744f38c1 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1672790127 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1672789132 1004 54797486969f23fa377b128694d548df ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1672789132 916 f87d7c45f9c908e672703b83b72241a3 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1672789132 924 9904cf1d39e9767e7a3622f2a125a565 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1672789132 928 2dc8d444221b7a635bb58038579b861a ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1672789132 908 2921f8a10601f252058503cc6570e581 ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1672789132 940 75ac932a52f80982a9f8ea75d03a34cf ""
+  "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1672789132 940 228d6584342e91276bf566bcf9716b83 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1672789570 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1672789570 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmr12.tfm" 1672789570 1288 655e228510b4c2a1abe905c368440826 ""
@@ -40,6 +47,8 @@
   "c:/texlive/2022/texmf-dist/tex/latex/amscls/amsthm.sty" 1672789130 12594 0d51ac3a545aaaa555021326ff22a6cc ""
   "c:/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty" 1672789132 5949 3f3fd50a8cc94c3d4cbf4fc66cd3df1c ""
   "c:/texlive/2022/texmf-dist/tex/latex/amsfonts/amssymb.sty" 1672789132 13829 94730e64147574077f8ecfea9bb69af4 ""
+  "c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsa.fd" 1672789132 961 6518c6525a34feb5e8250ffa91731cff ""
+  "c:/texlive/2022/texmf-dist/tex/latex/amsfonts/umsb.fd" 1672789132 961 d02606146ba5601b5645f987c92e6193 ""
   "c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty" 1672789135 2222 78b930a5a6e3dc2ac69b78c2057b94d7 ""
   "c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty" 1672789135 4173 c989ee3ced31418e3593916ab26c793a ""
   "c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsmath.sty" 1672789135 88393 1adf6fa3f245270d06e3d4f8910f7fc5 ""
@@ -85,12 +94,17 @@
   "c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1672792539 4662777 47d999f891270c1ec2e3f69191e4532c ""
   "c:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1672792727 7874776 f99d76aa1098cc457dcfae35d35efac0 ""
   "c:/texlive/2022/texmf.cnf" 1672792520 713 e69b156964470283e0530f5060668171 ""
+  "images/baseline_model.png" 1684464710 40998 b244800eeb7e2e989cf51233cf4d8f6a ""
+  "images/baseline_model_graph.png" 1686728156 29421 ae1b71ef0d507ac321e9e52d8a8ecbf1 ""
   "images/cropped.png" 1686703746 37706 ab9e07ec6587e8e109c4cea4110fe217 ""
+  "images/final_model.png" 1686729048 44029 4f6f4f41e2290a2d97e43a004f86b62e ""
+  "images/final_model_graph.png" 1686728003 26487 b336dc09acb80249a570c7063cda798b ""
+  "images/label_distribution.png" 1686720542 18288 f88235c17ebf4a834ba8d1329ca08ccf ""
   "images/uncropped.png" 1686703732 42508 b2e8bfdc52dbda1fb72d325190111ac6 ""
-  "writeup.aux" 1686703853 597 ead39d02d779e5fc0f350750757052d9 "pdflatex"
-  "writeup.bbl" 1686703852 877 628a2a8c68e066122d1514411e0b8455 "bibtex writeup"
-  "writeup.out" 1686703853 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "writeup.tex" 1686703849 5442 8064ebcac05ded4059ba1975313a54c3 ""
+  "writeup.aux" 1686729234 767 56ecaa7ea4c88a6bd10eb559e0e4cdc8 "pdflatex"
+  "writeup.bbl" 1686729232 1330 e00d763ae15eab2fa260d3a9935a473e "bibtex writeup"
+  "writeup.out" 1686729233 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "writeup.tex" 1686729226 11021 6ad9a1a83967ab3f2ed000eb744f38c1 ""
   (generated)
   "writeup.aux"
   "writeup.log"

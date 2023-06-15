@@ -31,20 +31,20 @@ for t in range(EPOCHS):
     # plot
     train_losses.append(train_loss)
     test_losses.append(test_loss)
-    test_accs_h.append(test_acc_horizontal/100)
-    test_accs_v.append(test_acc_vertical/100)
+    # test_accs_h.append(test_acc_horizontal/100)
+    # test_accs_v.append(test_acc_vertical/100)
     plt.clf()
     plt.plot(np.arange(1, t+2), train_losses, '-', label='train loss')
     plt.plot(np.arange(1, t+2), test_losses, '--', label='test loss')
-    plt.plot(np.arange(1, t+2), test_accs_h, '-.', label='test acc horizontal')
-    plt.plot(np.arange(1, t+2), test_accs_v, '-.', label='test acc vertical')
+    # plt.plot(np.arange(1, t+2), test_accs_h, '-.', label='test acc horizontal')
+    # plt.plot(np.arange(1, t+2), test_accs_v, '-.', label='test acc vertical')
     plt.legend()
     display.clear_output(wait=True)
     display.display(plt.gcf())
     time.sleep(0.0001)
     
-print(f"Final Accuracy Horizontal: {(test_acc_horizontal):>0.1f}%")
-print(f"Final Accuracy Vertical: {(test_acc_vertical):>0.1f}%")
+# print(f"Final Accuracy Horizontal: {(test_acc_horizontal):>0.1f}%")
+# print(f"Final Accuracy Vertical: {(test_acc_vertical):>0.1f}%")
 plt.savefig('accuracy_graph.png')
 
 save_path = 'MODEL/model.pth'

@@ -70,6 +70,11 @@ train_dataloader = torch.utils.data.DataLoader(
     batch_size = BATCH_SIZE,
     shuffle = True)
 
+train_dataloader2 = torch.utils.data.DataLoader(
+    dataset = dataset_train,
+    batch_size = 50,
+    shuffle = True)
+
 val_dataloader = torch.utils.data.DataLoader(
     dataset = dataset_validation,
     batch_size = BATCH_SIZE,

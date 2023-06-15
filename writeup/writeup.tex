@@ -170,6 +170,25 @@ Saliency maps of the model were generated using guided backpropogation, followin
 
 \section*{Evaluation and Summary}
 
+The final model was fairly accurate at predicting the horizontal and vertical diameters of the eyeballs. The model was able to predict the horizontal diameter with an average error of 0.05, and the vertical diameter with an average error of 0.04. Fortunately, the model was also able to keep the validation and trainig loss values fairly similar, with little to no overfitting of the data after using just a couple dropout layers. Interestingly enough, the model appeared to hit peak performance at around 20 epochs. After that, the loss values stagnated.\\
+
+\begin{center}
+    \begin{tabular}{|c|c|c|}
+        Loss Function & Value, 20 Epochs\\
+        Training Loss & 0.1962 \\
+        Validation Loss & 0.4681 \\
+    \end{tabular}
+\end{center}
+
+Saliency maps were also used to determine which parts of each image the model was considering for its predictions. Although the model appeared to be fairly accurate, it was difficult to determine what features the model was using through the saliency maps. However, it was interesting to notice that some of the maps appeared to be highlighting the edges of the eyeball, which is a feature that would be useful for the model to use.\\
+
+\begin{center}
+    \includegraphics[width=0.45\textwidth]{images/saliency_correct.pdf}
+    \includegraphics[width=0.45\textwidth]{images/saliency_correct2.pdf}\\
+    \includegraphics[width=0.45\textwidth]{images/saliency_incorrect.pdf}
+    \includegraphics[width=0.45\textwidth]{images/saliency_incorrect2.pdf}\\
+    \textit{Figure 4: Saliency maps of the model.}
+\end{center}
 
 \section*{What I Learned}
 

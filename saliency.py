@@ -3,7 +3,7 @@ from imports import *
 from model import *
 from dataloader import *
 
-NUMBER = 14
+NUMBER = 13
 INIT_LR = 1e-3
 
 file = h5py.File("data/US_train.h5", "r+")
@@ -46,7 +46,7 @@ fig, ax = plt.subplots()
 ax.imshow(np.moveaxis(saved_img, 0, -1) / saved_img.max(), cmap='hot')
 ax.imshow(torch.Tensor.cpu(saliency[0]), alpha=0.9, cmap='hot')
 ax.axis('off')
-ax.set_title('Saliency map, <5% prediction')
+ax.set_title('Saliency map, <5% prediction error')
 # plt.axis('off')
 # plt.suptitle('Saliency map, incorrect prediction')
 # plt.savefig('saliency.png')

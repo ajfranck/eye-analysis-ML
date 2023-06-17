@@ -26,6 +26,10 @@ I.~A. Khalid, ``Saliency map for visualizing deep learning model using
   pytorch,'' 2021,
   \url{https://towardsdatascience.com/saliency-map-using-pytorch-68270fe45e80}.
 
+\bibitem{d2l}
+A.~Zhang, Z.~C. Lipton, M.~Li, and A.~J. Smola, ``Dive into deep learning,''
+  2021, \url{https://d2l.ai/}.
+
 \bibitem{transforms}
 \url{https://pytorch.org/vision/stable/transforms.html}.
 

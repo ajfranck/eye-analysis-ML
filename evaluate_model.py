@@ -23,6 +23,8 @@ with torch.no_grad():
 #graph scatterplot of horizontal labels and predictions vs vertical labels and predictions
 plt.scatter(pred[:,0], pred[:,1], label = "preds", marker='+')  
 plt.scatter(y[:,0], y[:,1], label = "labels", marker='o')
+plt.xlim(1.5,3)
+plt.ylim(1.5,3)
 plt.legend()
 plt.savefig('scatterplot.png')
 plt.show()

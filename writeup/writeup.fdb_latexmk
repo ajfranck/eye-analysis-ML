@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex writeup"] 1686861526 "writeup.aux" "writeup.bbl" "writeup" 1686861529 0
+["bibtex writeup"] 1686891682 "writeup.aux" "writeup.bbl" "writeup" 1686891685 0
   "./bibliography.bib" 1685942679 970 11b2358f92f005a9ebe45f8302d96784 ""
   "c:/texlive/2022/texmf-dist/bibtex/bst/ieeetran/IEEEtran.bst" 1672790412 57748 7c8250ecf02814ce6ddc0cdbb63df1dd ""
-  "writeup.aux" 1686861528 767 24341659d0529ed539560c1bda143afa "pdflatex"
+  "writeup.aux" 1686891684 799 a2e4c8cdf631a6ab1c6df67d0dd6b34e "pdflatex"
   (generated)
   "writeup.bbl"
   "writeup.blg"
   (rewritten before read)
-["pdflatex"] 1686861526 "c:/Users/1amaj/OneDrive/Desktop/Github/eye-analysis-ML/writeup/writeup.tex" "writeup.pdf" "writeup" 1686861529 0
-  "c:/Users/1amaj/OneDrive/Desktop/Github/eye-analysis-ML/writeup/writeup.tex" 1686861523 12601 32f4edf70b6490d25cba5b4dc20f8bde ""
+["pdflatex"] 1686891682 "c:/Users/1amaj/OneDrive/Desktop/Github/eye-analysis-ML/writeup/writeup.tex" "writeup.pdf" "writeup" 1686891685 0
+  "c:/Users/1amaj/OneDrive/Desktop/Github/eye-analysis-ML/writeup/writeup.tex" 1686891675 12635 4165497d21795ce4af11de6be16e6825 ""
   "c:/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1672790127 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1672789132 1004 54797486969f23fa377b128694d548df ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1672789132 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -105,10 +105,10 @@
   "images/saliency_incorrect.pdf" 1686859567 82680 a63231c21a086d1c31c52c736623a8f2 ""
   "images/saliency_incorrect2.pdf" 1686859560 68892 125ff7a74906256d0b5de3b059a01937 ""
   "images/uncropped.png" 1686703732 42508 b2e8bfdc52dbda1fb72d325190111ac6 ""
-  "writeup.aux" 1686861528 767 24341659d0529ed539560c1bda143afa "pdflatex"
-  "writeup.bbl" 1686861526 1330 e00d763ae15eab2fa260d3a9935a473e "bibtex writeup"
-  "writeup.out" 1686861527 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "writeup.tex" 1686861523 12601 32f4edf70b6490d25cba5b4dc20f8bde ""
+  "writeup.aux" 1686891684 799 a2e4c8cdf631a6ab1c6df67d0dd6b34e "pdflatex"
+  "writeup.bbl" 1686891682 1453 2896bb83f1a1b68c7d79467b4ef1408d "bibtex writeup"
+  "writeup.out" 1686891684 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "writeup.tex" 1686891675 12635 4165497d21795ce4af11de6be16e6825 ""
   (generated)
   "writeup.aux"
   "writeup.log"

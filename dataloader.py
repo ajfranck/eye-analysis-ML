@@ -9,7 +9,8 @@ class ImageDataset:
         return self.X.shape[0]
     def __getitem__(self, index):
         return self.X[index, :, :, :], self.y[index, :]
-    
+
+#experimentation with normalizing (not applied to data) 
 transform = transforms.Compose([
     transforms.Normalize((0.5,0.5,0.5), (0.5,0.5,0.5))
 ])
